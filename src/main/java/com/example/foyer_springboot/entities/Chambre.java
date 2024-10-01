@@ -4,6 +4,8 @@ import com.example.foyer_springboot.enums.TypeChambre;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -16,5 +18,9 @@ public class Chambre {
     private Long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
+    @ManyToOne
+    private Bloc bloc;
+    @OneToMany
+    private List<Reservation> reservations;
 
 }

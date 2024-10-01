@@ -1,12 +1,11 @@
 package com.example.foyer_springboot.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ManyToAny;
 
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,8 +14,9 @@ import java.util.Date;
 @Entity
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idReservation;
+    private String idReservation;
     private Date anneeUniversitaire;
     private Boolean estValid;
+    @ManyToMany
+    private List<Etudiant> etudiants;
 }

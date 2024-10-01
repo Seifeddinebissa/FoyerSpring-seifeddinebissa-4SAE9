@@ -1,10 +1,9 @@
 package com.example.foyer_springboot.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,4 +16,8 @@ public class Foyer {
     private Long idFoyer;
     private String nomFoyer;
     private Long capaciteFoyer;
+    @OneToOne(mappedBy = "foyer")
+    private Universite universite;
+    @OneToMany(mappedBy = "foyer")
+    private List<Bloc> blocs;
 }

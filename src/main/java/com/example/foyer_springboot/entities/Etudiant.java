@@ -1,12 +1,10 @@
 package com.example.foyer_springboot.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,4 +20,6 @@ public class Etudiant {
     private Long cin;
     private String ecole;
     private Date dateNaissance;
+    @ManyToMany(mappedBy = "etudiants")
+    private List<Reservation> reservations;
 }
