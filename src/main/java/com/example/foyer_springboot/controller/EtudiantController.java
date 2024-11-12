@@ -3,6 +3,7 @@ package com.example.foyer_springboot.controller;
 import com.example.foyer_springboot.entities.Chambre;
 import com.example.foyer_springboot.entities.Etudiant;
 import com.example.foyer_springboot.services.IEtudiantService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/etudiant")
+@Tag(name="gestion universite")
 public class EtudiantController {
     IEtudiantService service;
     @PostMapping("/add")

@@ -31,4 +31,13 @@ public class BlocServiceImpl implements IBlocService{
     public Bloc updateBloc(Bloc bloc) {
         return blocRepository.save(bloc);
     }
+
+    @Override
+    public Bloc getBlocById(Long id) {
+        return blocRepository.findById(id).get();
+    }
+
+    public Integer countByCapaciteBlocGreaterThan(Long capacite){
+        return blocRepository.countByCapaciteBlocGreaterThan(capacite);
+    }
 }

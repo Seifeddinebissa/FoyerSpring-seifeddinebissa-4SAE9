@@ -1,10 +1,12 @@
 package com.example.foyer_springboot.entities;
 
 import com.example.foyer_springboot.enums.TypeChambre;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,8 +20,10 @@ public class Chambre {
     private Long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
+    @JsonIgnore
     @ManyToOne
     private Bloc bloc;
+    @JsonIgnore
     @OneToMany
     private List<Reservation> reservations;
 

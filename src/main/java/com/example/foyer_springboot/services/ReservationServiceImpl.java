@@ -5,6 +5,7 @@ import com.example.foyer_springboot.repositories.ReservationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @AllArgsConstructor
@@ -30,5 +31,8 @@ public class ReservationServiceImpl implements IReservationService{
     @Override
     public Reservation updateReservation(Reservation reservation) {
         return reservationRepository.save(reservation);
+    }
+    public List<Reservation> findByAnneeUniversitaireBetween(Date d1, Date d2){
+        return reservationRepository.findByAnneeUniversitaireBetween(d1,d2);
     }
 }

@@ -1,9 +1,11 @@
 package com.example.foyer_springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,6 +20,7 @@ public class Foyer {
     private Long capaciteFoyer;
     @OneToOne(mappedBy = "foyer")
     private Universite universite;
-    @OneToMany(mappedBy = "foyer")
+    @JsonIgnore
+    @OneToMany
     private List<Bloc> blocs;
 }

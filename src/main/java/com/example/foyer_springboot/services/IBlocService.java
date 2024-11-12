@@ -10,4 +10,5 @@ public interface IBlocService {
     List<Bloc> getAllBloc();
     void deleteBloc(Long id);
     Bloc updateBloc(Bloc bloc);
+    Bloc getBlocById(Long id);
 }

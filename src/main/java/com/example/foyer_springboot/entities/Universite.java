@@ -1,5 +1,6 @@
 package com.example.foyer_springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,6 +15,7 @@ public class Universite {
     private Long idUniversite;
     private String nomUniversite;
     private String adresse;
+    @JsonIgnore
     @OneToOne
     private Foyer foyer;
 }
